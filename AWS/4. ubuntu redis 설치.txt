@@ -1,0 +1,6 @@
+
+sudo apt-get install redis-server
+sudo start redis-server
+sudo restart redis-server
+sudo stop redis-server
+redis-cli : 커맨드 창으로 들어가기

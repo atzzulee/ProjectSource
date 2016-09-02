@@ -1,0 +1,25 @@
+
+// package json 설치
+npm init -y
+
+// express 설치
+npm install express --save
+
+// express-generator 글로벌로 설치
+npm install -g express-generator
+
+// express exp1을 express 기본셋팅화면 설정
+express --ejs exp1
+cd exp1
+
+// node package.json 에 존재하는 내용설치
+npm install
+
+// node 실행
+npm start
+
+// nodemon 글로벌로 설치
+npm instal -g nodemon
+
+// nodemon으로 실행
+nodemon app.js

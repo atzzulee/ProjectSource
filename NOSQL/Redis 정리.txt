@@ -1,0 +1,69 @@
+// 데이터 입력
+set hello world
+
+// 데이터 조회
+get hello
+
+// Expire 100초뒤 삭제
+get hello 100
+
+// foo를 0으로 지정
+set foo 0
+incr foo -- 1추가
+decr foo -- 1삭제
+
+// 존재여부
+exists hello
+
+// 타입여부
+type hello
+
+// 리네임
+rename hello olleh
+
+// 삭제
+del olleh
+
+// 배열형 조회
+set a 1
+set b 2
+set c 3
+mget a b c //["1","2","3"]
+
+// 셋 추가
+sadd seta foo // seta 에 foo 추가
+sadd seta bar // seta 에 bar 추가
+sadd setb foo // setb 에 foo 추가
+sinter seta setb // seta, setb에 모두 존재하는 데이터 출력
+smembers seta // seta의 데이터 출력
+
+// list 추가 & 조회
+lpush list a
+lpush list b
+lpush list c
+lpush list d
+lrange list 0, 3 //["d","c","b","a"]
+
+// Sort 셋 추가
+zadd ss 1 aa
+zadd ss 10 zz
+zadd ss 9 yy
+zadd 2 bbl
+zrange ss 0 -1 // Sort 셋 전체 출력
+
+// Hash 추가
+hset user:1 name x
+hset user:1 lastname y
+hset user:2 name aa
+hget user:1 name // "x"
+hgetall user:1 // {"name":"x", lastname:"y"}
+hget user:2 name // "aa"
+
+// Transaction 사용법
+multi
+lpush clist a
+lpush clist b
+lpush clist c
+lrange clist 0 -1
+exec // 트랜잭션 실행 [1,2,3,["c","b","a"]]
+discard // 트랜잭션 삭제

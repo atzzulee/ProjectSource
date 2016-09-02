@@ -1,0 +1,26 @@
+[ package contorl ]
+
+1. https://packagecontrol.io/installation
+2. 명령어 한 줄 복사
+3. sublime text 3 -> View -> Show Console
+
+[ sftp 설치 ]
+Preferences -> Package control -> Install
+Package -> sftp -> 클릭
+
+[ sftp 설정]
+프로젝트 -> 우클릭 -> sftp/ftp -> Map to Remote
+
+[ 리모트 설정 ]
+"upload_on_save": true,
+"host": "52.79.138.233"
+"user": "ubuntu"
+"remote_path": "/home/ubuntu/projects/exp1"
+"ignore_regexes": [
+	"node_modules"
+],
+"ssh_key_file": "D:/AWS/aws2016.ppk",
+
+[ emmet html 지원 ]
+Preferences -> Package control -> Install
+Package -> emmet -> 클릭

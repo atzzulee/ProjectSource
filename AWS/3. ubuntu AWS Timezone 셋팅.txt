@@ -1,0 +1,19 @@
+$ date
+Thu Feb 28 14:12:51 KST 2013
+
+$ cat /etc/timezone
+Asia/Seoul
+
+$ sudo dpkg-reconfigure tzdata
+
+Current default time zone: 'Asia/Seoul'
+Local time is now:      Thu Feb 28 14:13:22 KST 2013.
+Universal Time is now:  Thu Feb 28 05:13:22 UTC 2013.
+
+$ sudo service cron stop
+cron stop/waiting
+
+$ sudo service cron start
+cron start/running, process 23295
+
+$ sudo tail -f grep CRON /var/log/syslog
